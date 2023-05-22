@@ -1,4 +1,4 @@
-function ProfileCard({ title, handle, image }) {
+function ProfileCard({ title, handle, image, description }) {
   return (
     <div className="card">
       <div className="card-image">
@@ -7,8 +7,11 @@ function ProfileCard({ title, handle, image }) {
         </figure>
       </div>
       <div className="card-content">
-        <p className="title is-4">Title is {title}</p>
-        <p className="subtitle is-6">Handle is {handle}</p>
+        <div className="media-content">
+          <p className="title is-4">Title is {title}</p>
+          <p className="subtitle is-6">Handle is {handle}</p>
+        </div>
+        <div className="content">{description}</div>
       </div>
     </div>
   );
