@@ -5,6 +5,7 @@ import dog from "../../svg/dog.svg";
 import gator from "../../svg/gator.svg";
 import horse from "../../svg/horse.svg";
 import heart from "../../svg/heart.svg";
+import { useState } from "react";
 
 const svgMap = {
   // NOTE: equivalent to bird: bird in Object key value pairs
@@ -13,13 +14,28 @@ const svgMap = {
   cow,
   dog,
   gator,
-  horse
-}
+  horse,
+};
 
 const AnimalShow = ({ type }) => {
-  return <div>
-    <img src={svgMap[type]} alt="animal" />
-  </div>;
+  const [clicks, setClicks] = useState(0);
+
+  const handleClick = () => {
+    setClicks(clicks + 1);
+  };
+  return (
+    <div className="animal-show" onClick={handleClick}>
+      <img className="animal" src={svgMap[type]} alt="animal" />
+      <img
+        className="heart"
+        src={heart}
+        alt="heart"
+        style={{
+          width: 10 + 10 * clicks + "px",
+        }}
+      />
+    </div>
+  );
 };
 
 export default AnimalShow;

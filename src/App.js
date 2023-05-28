@@ -2,6 +2,7 @@ import "bulma/css/bulma.css";
 import { useState } from "react";
 import AnimalApp from "./Components/AnimalApp";
 import PDA from "./Components/PDA";
+import './App.css';
 
 function App() {
   const [active, setActive] = useState("");
